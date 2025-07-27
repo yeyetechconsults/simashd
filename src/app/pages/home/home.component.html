@@ -230,15 +230,19 @@
           Gain public trust and reduce fear when dealing with unknown parties.
           Apply for a SIMA Trust Certificate today.
         </p>
-        <form class="text-start">
+        <form class="text-start" [formGroup]="verificationForm" (ngSubmit)="onVerifySubmit()">
           <div class="form-floating mb-3">
             <input
               type="text"
               class="form-control"
               id="companyName"
               placeholder="Your Company or Full Name"
+              formControlName="companyName"
             />
             <label for="companyName">Company/Individual Name</label>
+            <div *ngIf="verificationForm.get('companyName')?.invalid && verificationForm.get('companyName')?.touched" class="text-danger mt-1">
+              Company/Individual Name is required.
+            </div>
           </div>
           <div class="form-floating mb-3">
             <input
@@ -246,21 +250,30 @@
               class="form-control"
               id="contactEmail"
               placeholder="name@example.com"
+              formControlName="contactEmail"
             />
             <label for="contactEmail">Contact Email</label>
+            <div *ngIf="verificationForm.get('contactEmail')?.invalid && verificationForm.get('contactEmail')?.touched" class="text-danger mt-1">
+              <div *ngIf="verificationForm.get('contactEmail')?.errors?.['required']">Contact Email is required.</div>
+              <div *ngIf="verificationForm.get('contactEmail')?.errors?.['email']">Please enter a valid email address.</div>
+            </div>
           </div>
           <div class="form-floating mb-3">
             <select
               class="form-select"
               id="certificateType"
               aria-label="Type of Certificate"
+              formControlName="certificateType"
             >
-              <option selected>Select...</option>
+              <option value="">Select...</option>
               <option value="individual">Individual</option>
               <option value="company">Company</option>
               <option value="ngo">NGO</option>
             </select>
             <label for="certificateType">Type of Certificate</label>
+            <div *ngIf="verificationForm.get('certificateType')?.invalid && verificationForm.get('certificateType')?.touched" class="text-danger mt-1">
+              Type of Certificate is required.
+            </div>
           </div>
           <div class="form-floating mb-3">
             <textarea
@@ -268,17 +281,25 @@
               id="messageTrust"
               placeholder="Briefly describe your request"
               style="height: 100px"
+              formControlName="messageTrust"
             ></textarea>
             <label for="messageTrust">Briefly describe your request</label>
+            <div *ngIf="verificationForm.get('messageTrust')?.invalid && verificationForm.get('messageTrust')?.touched" class="text-danger mt-1">
+              Description is required.
+            </div>
           </div>
           <button
             type="submit"
             class="btn btn-lg btn-sima-primary w-100 mt-3"
-            routerLink="/contact-us"
+            [disabled]="verificationForm.invalid || isSending"
           >
-            Submit Application
+            <span *ngIf="!isSending">Submit Application</span>
+            <span *ngIf="isSending" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            <span *ngIf="isSending"> Submitting...</span>
           </button>
         </form>
+        <div *ngIf="isSent" class="alert alert-success mt-3">Application submitted successfully!</div>
+        <div *ngIf="isError" class="alert alert-danger mt-3">An error occurred. Please try again later.</div>
       </div>
     </div>
   </div>
