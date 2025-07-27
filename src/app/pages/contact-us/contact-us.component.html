@@ -20,6 +20,98 @@
     Get in touch with SIMA Shield for inquiries or support.
   </p>
 
+  <div class="row mt-4">
+    <div class="col-md-8 offset-md-2">
+      <div class="card bg-sima-white text-sima-dark border-0 shadow-lg p-4">
+        <h3 class="mb-3 text-sima-blue">Send us a message:</h3>
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Your Name"
+              formControlName="name"
+            />
+            <label for="name">Name</label>
+            <div
+              *ngIf="
+                contactForm.get('name')?.invalid &&
+                contactForm.get('name')?.touched
+              "
+              class="text-danger mt-1"
+            >
+              Name is required.
+            </div>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="name@example.com"
+              formControlName="email"
+            />
+            <label for="email">Email address</label>
+            <div
+              *ngIf="
+                contactForm.get('email')?.invalid &&
+                contactForm.get('email')?.touched
+              "
+              class="text-danger mt-1"
+            >
+              <div *ngIf="contactForm.get('email')?.errors?.['required']">
+                Email is required.
+              </div>
+              <div *ngIf="contactForm.get('email')?.errors?.['email']">
+                Please enter a valid email address.
+              </div>
+            </div>
+          </div>
+          <div class="form-floating mb-3">
+            <textarea
+              class="form-control"
+              id="message"
+              placeholder="Your Message"
+              style="height: 100px"
+              formControlName="message"
+            ></textarea>
+            <label for="message">Message</label>
+            <div
+              *ngIf="
+                contactForm.get('message')?.invalid &&
+                contactForm.get('message')?.touched
+              "
+              class="text-danger mt-1"
+            >
+              Message is required.
+            </div>
+          </div>
+          <button
+            type="submit"
+            class="btn btn-lg btn-sima-primary w-100 mt-3"
+            [disabled]="contactForm.invalid || isSending"
+          >
+            <span *ngIf="!isSending">Submit</span>
+            <span
+              *ngIf="isSending"
+              class="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            ></span>
+            <span *ngIf="isSending"> Sending...</span>
+          </button>
+        </form>
+        <div *ngIf="isSent" class="alert alert-success mt-3">
+          Message sent successfully!
+        </div>
+        <div *ngIf="isError" class="alert alert-danger mt-3">
+          An error occurred. Please try again later.
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="row mt-5">
     <div class="col-md-8 offset-md-2">
       <div class="card bg-sima-white text-sima-dark border-0 shadow-lg p-4">
@@ -40,46 +132,6 @@
             >simashield.net</a
           >
         </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="row mt-4">
-    <div class="col-md-8 offset-md-2">
-      <div class="card bg-sima-white text-sima-dark border-0 shadow-lg p-4">
-        <h3 class="mb-3 text-sima-blue">Send us a message:</h3>
-        <form>
-          <div class="form-floating mb-3">
-            <input
-              type="text"
-              class="form-control"
-              id="name"
-              placeholder="Your Name"
-            />
-            <label for="name">Name</label>
-          </div>
-          <div class="form-floating mb-3">
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              placeholder="name@example.com"
-            />
-            <label for="email">Email address</label>
-          </div>
-          <div class="form-floating mb-3">
-            <textarea
-              class="form-control"
-              id="message"
-              placeholder="Your Message"
-              style="height: 100px"
-            ></textarea>
-            <label for="message">Message</label>
-          </div>
-          <button type="submit" class="btn btn-lg btn-sima-primary w-100 mt-3">
-            Submit
-          </button>
-        </form>
       </div>
     </div>
   </div>
