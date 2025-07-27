@@ -21,6 +21,7 @@ export class HomeComponent {
     this.verificationForm = this.fb.group({
       companyName: ['', Validators.required],
       contactEmail: ['', [Validators.required, Validators.email]],
+      phone: ['', Validators.required],
       certificateType: ['', Validators.required],
       messageTrust: ['', Validators.required]
     });

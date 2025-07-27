@@ -69,6 +69,25 @@
             </div>
           </div>
           <div class="form-floating mb-3">
+            <input
+              type="tel"
+              class="form-control"
+              id="phone"
+              placeholder="Your Phone Number"
+              formControlName="phone"
+            />
+            <label for="phone">Phone Number</label>
+            <div
+              *ngIf="
+                contactForm.get('phone')?.invalid &&
+                contactForm.get('phone')?.touched
+              "
+              class="text-danger mt-1"
+            >
+              Phone Number is required.
+            </div>
+          </div>
+          <div class="form-floating mb-3">
             <textarea
               class="form-control"
               id="message"
