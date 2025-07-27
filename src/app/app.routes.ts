@@ -5,6 +5,7 @@ import { SimaVipComponent } from './pages/sima-vip/sima-vip.component';
 import { ScamAlertsComponent } from './pages/scam-alerts/scam-alerts.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { authGuard } from './guards/auth.guard';
+import { OurservicesComponent } from './pages/ourservices/ourservices.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -13,5 +14,6 @@ export const routes: Routes = [
   { path: 'sima-vip', component: SimaVipComponent },
   { path: 'scam-alerts', component: ScamAlertsComponent },
   { path: 'contact-us', component: ContactUsComponent },
+  { path: 'ourservices', component: OurservicesComponent },
   { path: '**', redirectTo: 'home' } // Wildcard route for any unmatched paths
 ];
