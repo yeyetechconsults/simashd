@@ -161,26 +161,26 @@
         <h4 class="mb-4 text-sima-blue fw-bold"><i class="bi bi-patch-check-fill me-2"></i>Become a Verified Entity</h4>
         <p class="lead">Gain public trust and reduce fear when dealing with unknown parties. Apply for a SIMA Trust Certificate today.</p>
         <form class="text-start">
-          <div class="mb-3">
-            <label for="companyName" class="form-label">Company/Individual Name</label>
+          <div class="form-floating mb-3">
             <input type="text" class="form-control" id="companyName" placeholder="Your Company or Full Name">
+            <label for="companyName">Company/Individual Name</label>
           </div>
-          <div class="mb-3">
-            <label for="contactEmail" class="form-label">Contact Email</label>
+          <div class="form-floating mb-3">
             <input type="email" class="form-control" id="contactEmail" placeholder="name@example.com">
+            <label for="contactEmail">Contact Email</label>
           </div>
-          <div class="mb-3">
-            <label for="certificateType" class="form-label">Type of Certificate</label>
-            <select class="form-select" id="certificateType">
+          <div class="form-floating mb-3">
+            <select class="form-select" id="certificateType" aria-label="Type of Certificate">
               <option selected>Select...</option>
               <option value="individual">Individual</option>
               <option value="company">Company</option>
               <option value="ngo">NGO</option>
             </select>
+            <label for="certificateType">Type of Certificate</label>
           </div>
-          <div class="mb-3">
-            <label for="messageTrust" class="form-label">Briefly describe your request</label>
-            <textarea class="form-control" id="messageTrust" rows="3"></textarea>
+          <div class="form-floating mb-3">
+            <textarea class="form-control" id="messageTrust" placeholder="Briefly describe your request" style="height: 100px"></textarea>
+            <label for="messageTrust">Briefly describe your request</label>
           </div>
           <button type="submit" class="btn btn-lg btn-sima-primary w-100 mt-3">Submit Application</button>
         </form>
