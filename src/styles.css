@@ -1,1 +1,70 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --sima-blue: #0054A6;
+  --sima-red: #E31C23;
+  --sima-white: #FFFFFF;
+  --sima-gold-accent: #FFD700; /* Re-introducing gold for accents */
+  --sima-dark-bg: #1a1a1a; /* A darker background for contrast, similar to NVIDIA */
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--sima-white);
+  background-color: var(--sima-dark-bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--sima-white);
+}
+
+/* General text colors based on background */
+.text-sima-blue { color: var(--sima-blue) !important; }
+.text-sima-red { color: var(--sima-red) !important; }
+.text-sima-white { color: var(--sima-white) !important; }
+.text-sima-gold { color: var(--sima-gold-accent) !important; }
+
+/* General background colors */
+.bg-sima-blue { background-color: var(--sima-blue) !important; }
+.bg-sima-red { background-color: var(--sima-red) !important; }
+.bg-sima-white { background-color: var(--sima-white) !important; }
+.bg-sima-dark { background-color: var(--sima-dark-bg) !important; }
+
+/* Custom button styles */
+.btn-sima-primary {
+  background-color: var(--sima-blue);
+  color: var(--sima-white);
+  border: 1px solid var(--sima-blue);
+  transition: all 0.3s ease;
+}
+.btn-sima-primary:hover {
+  background-color: var(--sima-white);
+  color: var(--sima-blue);
+  border: 1px solid var(--sima-blue);
+}
+
+.btn-sima-accent {
+  background-color: var(--sima-red);
+  color: var(--sima-white);
+  border: 1px solid var(--sima-red);
+  transition: all 0.3s ease;
+}
+.btn-sima-accent:hover {
+  background-color: var(--sima-white);
+  color: var(--sima-red);
+  border: 1px solid var(--sima-red);
+}
+
+.btn-sima-gold {
+  background-color: var(--sima-gold-accent);
+  color: var(--sima-dark-bg);
+  border: 1px solid var(--sima-gold-accent);
+  transition: all 0.3s ease;
+}
+.btn-sima-gold:hover {
+  background-color: var(--sima-dark-bg);
+  color: var(--sima-gold-accent);
+  border: 1px solid var(--sima-gold-accent);
+}
