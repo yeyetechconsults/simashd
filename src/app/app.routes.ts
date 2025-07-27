@@ -10,7 +10,7 @@ export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'verify-now', component: VerifyNowComponent },
-  { path: 'sima-vip', component: SimaVipComponent, canActivate: [authGuard] },
+  { path: 'sima-vip', component: SimaVipComponent },
   { path: 'scam-alerts', component: ScamAlertsComponent },
   { path: 'contact-us', component: ContactUsComponent },
   { path: '**', redirectTo: 'home' } // Wildcard route for any unmatched paths
