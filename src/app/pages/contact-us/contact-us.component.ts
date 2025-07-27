@@ -34,7 +34,7 @@ export class ContactUsComponent {
     this.isSent = false;
     this.isError = false;
 
-    this.http.post('http://localhost:3000/send-email', this.contactForm.value)
+    this.http.post('http://brain.simashield.net/send-email', this.contactForm.value)
       .subscribe({
         next: () => {
           this.isSending = false;
