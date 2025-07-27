@@ -38,6 +38,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--sima-white);
   border: 1px solid var(--sima-blue);
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 .btn-sima-primary:hover {
   background-color: var(--sima-white);
@@ -50,6 +51,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--sima-white);
   border: 1px solid var(--sima-red);
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 .btn-sima-accent:hover {
   background-color: var(--sima-white);
@@ -62,9 +64,14 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--sima-dark-bg);
   border: 1px solid var(--sima-gold-accent);
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 .btn-sima-gold:hover {
   background-color: var(--sima-dark-bg);
   color: var(--sima-gold-accent);
   border: 1px solid var(--sima-gold-accent);
+}
+
+.navbar-nav .nav-link {
+  cursor: pointer;
 }

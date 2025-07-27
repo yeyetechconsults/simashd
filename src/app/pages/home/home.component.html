@@ -102,21 +102,19 @@
 
 <div class="container my-5">
   <h2 class="text-center mb-5 text-sima-white">Live Scam Alert Feed</h2>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card bg-sima-white text-sima-dark border-0 shadow-lg p-4">
-        <p class="text-center">[Placeholder for real-time trending scams and regional filter]</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container my-5">
-  <h2 class="text-center mb-5 text-sima-white">Success Stories</h2>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card bg-sima-white text-sima-dark border-0 shadow-lg p-4">
-        <p class="text-center">[Placeholder for testimonials from people saved by SIMA]</p>
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="card bg-sima-white text-sima-dark border-0 shadow-lg p-4 text-center">
+        <h4 class="mb-4 text-sima-red fw-bold"><i class="bi bi-megaphone-fill me-2"></i>Stay Informed: Latest Scam Trends</h4>
+        <p class="lead">Our national warning board provides real-time updates on trending scams across Uganda. Stay vigilant and protect yourself from fraud.</p>
+        <ul class="list-unstyled text-start mx-auto" style="max-width: 600px;">
+          <li class="mb-2"><i class="bi bi-exclamation-triangle-fill text-sima-red me-2"></i><strong>Urgent:</strong> Fake Mobile Money Promotions - Beware of unsolicited messages promising cash prizes.</li>
+          <li class="mb-2"><i class="bi bi-exclamation-triangle-fill text-sima-red me-2"></i><strong>Warning:</strong> Online Loan Scams - Verify lenders through official channels before sharing personal details.</li>
+          <li class="mb-2"><i class="bi bi-exclamation-triangle-fill text-sima-red me-2"></i><strong>Alert:</strong> Impersonation Scams - Always confirm identity before engaging with individuals claiming to be from official institutions.</li>
+        </ul>
+        <p class="text-center mt-4">
+          <a routerLink="/scam-alerts" class="btn btn-lg btn-sima-accent">View All Alerts</a>
+        </p>
       </div>
     </div>
   </div>
@@ -157,11 +155,35 @@
 
 <div class="container my-5">
   <h2 class="text-center mb-5 text-sima-white">Apply for SIMA Trust Certificate</h2>
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <div class="card bg-sima-white text-sima-dark border-0 shadow-lg p-4">
-        <p>[Placeholder for brief form]</p>
-        <button class="btn btn-lg btn-sima-primary">Become Verified</button>
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="card bg-sima-white text-sima-dark border-0 shadow-lg p-4 text-center">
+        <h4 class="mb-4 text-sima-blue fw-bold"><i class="bi bi-patch-check-fill me-2"></i>Become a Verified Entity</h4>
+        <p class="lead">Gain public trust and reduce fear when dealing with unknown parties. Apply for a SIMA Trust Certificate today.</p>
+        <form class="text-start mx-auto" style="max-width: 600px;">
+          <div class="mb-3">
+            <label for="companyName" class="form-label">Company/Individual Name</label>
+            <input type="text" class="form-control" id="companyName" placeholder="Your Company or Full Name">
+          </div>
+          <div class="mb-3">
+            <label for="contactEmail" class="form-label">Contact Email</label>
+            <input type="email" class="form-control" id="contactEmail" placeholder="name@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="certificateType" class="form-label">Type of Certificate</label>
+            <select class="form-select" id="certificateType">
+              <option selected>Select...</option>
+              <option value="individual">Individual</option>
+              <option value="company">Company</option>
+              <option value="ngo">NGO</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="messageTrust" class="form-label">Briefly describe your request</label>
+            <textarea class="form-control" id="messageTrust" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-lg btn-sima-primary w-100 mt-3">Submit Application</button>
+        </form>
       </div>
     </div>
   </div>
@@ -169,10 +191,14 @@
 
 <div class="container my-5">
   <h2 class="text-center mb-5 text-sima-white">Corporate Partnerships</h2>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card bg-sima-white text-sima-dark border-0 shadow-lg p-4">
-        <p class="text-center">[Placeholder for info section for media houses, NGOs, and banks]</p>
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="card bg-sima-white text-sima-dark border-0 shadow-lg p-4 text-center">
+        <h4 class="mb-4 text-sima-blue fw-bold"><i class="bi bi-handshake-fill me-2"></i>Collaborate with SIMA Shield</h4>
+        <p class="lead">SIMA Shield partners with radio stations, churches, NGOs, schools, and SACCOs to enhance verification processes and protect communities. Join us in building a safer Uganda.</p>
+        <p class="mt-4">
+          <a routerLink="/contact-us" class="btn btn-lg btn-sima-primary">Contact Us for Partnerships</a>
+        </p>
       </div>
     </div>
   </div>
