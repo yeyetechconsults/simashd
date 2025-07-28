@@ -36,7 +36,7 @@ export class HomeComponent {
     this.isSent = false;
     this.isError = false;
 
-    this.http.post('http://brain.simashield.net/send-verification-email', this.verificationForm.value)
+    this.http.post('https://brain.simashield.net/send-verification-email', this.verificationForm.value)
       .subscribe({
         next: () => {
           this.isSending = false;

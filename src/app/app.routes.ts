@@ -8,12 +8,11 @@ import { authGuard } from './guards/auth.guard';
 import { OurservicesComponent } from './pages/ourservices/ourservices.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'verify-now', component: VerifyNowComponent },
   { path: 'sima-vip', component: SimaVipComponent },
   { path: 'scam-alerts', component: ScamAlertsComponent },
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'ourservices', component: OurservicesComponent },
-  { path: '**', redirectTo: 'home' } // Wildcard route for any unmatched paths
+  { path: '**', redirectTo: '' } // Wildcard route for any unmatched paths
 ];
